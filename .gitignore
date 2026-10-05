@@ -1,0 +1,36 @@
+.env
+.env.*
+!.env.example
+client_secret_*.json
+/tmp/yt_auth_url.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+
+# OS
+.DS_Store
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Logs
+logs/
+*.log
+
+# Local
+сssh_for_dev_pet_proj
+сssh_for_dev_pet_proj.pub
+.claude/

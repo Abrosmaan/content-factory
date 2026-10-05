@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "content-factory"
+version = "0.1.0"
+description = "Automated YouTube gaming content factory"
+requires-python = ">=3.12"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-ra -q"
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

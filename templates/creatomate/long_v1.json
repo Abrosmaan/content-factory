@@ -1,0 +1,73 @@
+{
+  "output_format": "mp4",
+  "frame_rate": 30,
+  "width": 1920,
+  "height": 1080,
+  "fill_color": "#000000",
+  "elements": [
+    {
+      "id": "footage_0",
+      "type": "video",
+      "track": 1,
+      "time": 0,
+      "fit": "cover",
+      "volume": "0%",
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/video1.mp4"
+    },
+    {
+      "id": "footage_1",
+      "type": "video",
+      "track": 1,
+      "fit": "cover",
+      "volume": "0%",
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/video1.mp4"
+    },
+    {
+      "id": "footage_2",
+      "type": "video",
+      "track": 1,
+      "fit": "cover",
+      "volume": "0%",
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/video1.mp4"
+    },
+    {
+      "id": "voice",
+      "type": "audio",
+      "track": 2,
+      "time": 0,
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/music1.mp3"
+    },
+    {
+      "id": "subtitles",
+      "type": "text",
+      "track": 3,
+      "time": 0,
+      "x": "50%",
+      "y": "88%",
+      "width": "75%",
+      "height": "18%",
+      "x_alignment": "50%",
+      "y_alignment": "100%",
+      "text": "",
+      "font_family": "Inter",
+      "font_weight": "700",
+      "font_size": "4 vmin",
+      "fill_color": "#FFFFFF",
+      "stroke_color": "#000000",
+      "stroke_width": "0.4 vmin",
+      "background_color": "rgba(0, 0, 0, 0.55)",
+      "background_x_padding": "16%",
+      "background_y_padding": "16%"
+    },
+    {
+      "id": "music",
+      "type": "audio",
+      "track": 4,
+      "time": 0,
+      "volume": "12%",
+      "audio_fade_in": 2,
+      "audio_fade_out": 3,
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/music1.mp3"
+    }
+  ]
+}

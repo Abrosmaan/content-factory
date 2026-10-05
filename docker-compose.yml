@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    image: content-factory:latest
+    container_name: content-factory
+    env_file: .env
+    restart: unless-stopped
+    # host network: контейнер не открывает портов наружу и нуждается
+    # в IPv6 для Supabase free-tier (direct connection теперь только IPv6).
+    network_mode: host
+    volumes:
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

@@ -1,0 +1,21 @@
+[Unit]
+Description=Content Factory (Docker Compose)
+Documentation=https://github.com/Abrosmaan/content-factory
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/content-factory
+EnvironmentFile=/opt/content-factory/.env
+ExecStart=/usr/bin/docker compose up
+ExecStop=/usr/bin/docker compose down
+Restart=always
+RestartSec=10
+TimeoutStartSec=600
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Auto-push на GitHub после каждого локального коммита.
+# Устанавливается через scripts/install-hooks.sh → копирует сюда → .git/hooks/.
+#
+# Поведение:
+#   * Пушим только текущую ветку.
+#   * Никогда не --force.
+#   * Если push упал (no network / rejected) — печатаем подсказку и
+#     возвращаем 0, чтобы НЕ ломать локальный commit (он уже сделан).
+#   * Можно временно отключить переменной окружения CF_NO_AUTOPUSH=1.
+
+set -u
+
+if [[ "${CF_NO_AUTOPUSH:-0}" == "1" ]]; then
+  echo "[post-commit] auto-push skipped (CF_NO_AUTOPUSH=1)"
+  exit 0
+fi
+
+branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo HEAD)"
+if [[ -z "$branch" || "$branch" == "HEAD" ]]; then
+  echo "[post-commit] detached HEAD — skip auto-push"
+  exit 0
+fi
+
+# Push без --force; провал не ломает commit (exit 0).
+if git push origin "$branch" 2>&1; then
+  exit 0
+else
+  rc=$?
+  echo "[post-commit] push origin $branch failed (rc=$rc). Run 'git push' manually." >&2
+  exit 0
+fi

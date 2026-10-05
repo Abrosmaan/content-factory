@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Product from '../../components/Product.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map(p => ({ params: { slug: p.slug }, props: { post: p } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+<Base title={post.data.title}>
+  <h1>{post.data.title}</h1>
+  <div class="meta">
+    {new Date(post.data.date).toISOString().slice(0,10)}
+    {post.data.youtube_url && <> · <a href={post.data.youtube_url}>watch on YouTube</a></>}
+  </div>
+
+  {post.data.youtube_url && (
+    <p><a href={post.data.youtube_url}>▶ Watch the video</a></p>
+  )}
+
+  <Content />
+
+  {post.data.products?.length > 0 && (
+    <>
+      <h3>Gear in this article</h3>
+      {post.data.products.map(p => (
+        <Product name={p.name} url={p.url} price_usd={p.price_usd} />
+      ))}
+    </>
+  )}
+</Base>

@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const posts = (await getCollection('posts'))
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+---
+<Base title="Content Factory blog">
+  <h1>Content Factory blog</h1>
+  <p class="meta">PC gaming + desk-setup, the same long-form coverage that backs our YouTube channel.</p>
+  <ul>
+    {posts.map(p => (
+      <li>
+        <h2><a href={`/posts/${p.slug}/`}>{p.data.title}</a></h2>
+        <div class="meta">{new Date(p.data.date).toISOString().slice(0,10)}</div>
+      </li>
+    ))}
+  </ul>
+</Base>

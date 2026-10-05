@@ -1,0 +1,11 @@
+---
+const { name, url, price_usd } = Astro.props;
+---
+<div class="product">
+  <strong>{name}{price_usd ? ` — $${Math.round(price_usd)}` : ''}</strong>
+  <a href={url} rel="nofollow sponsored noopener" target="_blank">Buy →</a>
+  <div class="ftc">
+    Affiliate link. As an affiliate, we earn from qualifying purchases — at no
+    extra cost to you.
+  </div>
+</div>

@@ -1,0 +1,37 @@
+{
+  "output_format": "mp4",
+  "frame_rate": 30,
+  "width": 1920,
+  "height": 1080,
+  "duration": 5,
+  "elements": [
+    {
+      "id": "still",
+      "type": "image",
+      "track": 1,
+      "time": 0,
+      "fit": "cover",
+      "animations": [
+        {
+          "type": "scale",
+          "scope": "element",
+          "easing": "linear",
+          "start_scale": "100%",
+          "end_scale": "115%",
+          "duration": 5
+        },
+        {
+          "type": "pan",
+          "scope": "element",
+          "easing": "linear",
+          "start_x": "50%",
+          "start_y": "50%",
+          "end_x": "55%",
+          "end_y": "48%",
+          "duration": 5
+        }
+      ],
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/image1.jpg"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "output_format": "jpg",
+  "width": 1280,
+  "height": 720,
+  "duration": 1,
+  "elements": [
+    {
+      "id": "background",
+      "type": "image",
+      "track": 1,
+      "time": 0,
+      "fit": "cover",
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/image1.jpg"
+    },
+    {
+      "id": "gradient",
+      "type": "shape",
+      "track": 2,
+      "time": 0,
+      "x": "0%",
+      "y": "100%",
+      "x_anchor": "0%",
+      "y_anchor": "100%",
+      "width": "100%",
+      "height": "70%",
+      "fill_color": "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 80%)"
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "track": 3,
+      "time": 0,
+      "x": "5%",
+      "y": "92%",
+      "x_anchor": "0%",
+      "y_anchor": "100%",
+      "width": "90%",
+      "text": "",
+      "font_family": "Inter",
+      "font_weight": "900",
+      "font_size": "12 vmin",
+      "fill_color": "#FFFFFF",
+      "stroke_color": "#000000",
+      "stroke_width": "0.4 vmin",
+      "letter_spacing": "-3%"
+    },
+    {
+      "id": "accent",
+      "type": "shape",
+      "track": 4,
+      "time": 0,
+      "x": "5%",
+      "y": "88%",
+      "x_anchor": "0%",
+      "y_anchor": "100%",
+      "width": "5%",
+      "height": "1.2%",
+      "fill_color": "#E4A845"
+    }
+  ]
+}

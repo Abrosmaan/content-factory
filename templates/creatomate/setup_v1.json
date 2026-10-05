@@ -1,0 +1,107 @@
+{
+  "output_format": "mp4",
+  "frame_rate": 30,
+  "width": 1920,
+  "height": 1080,
+  "fill_color": "#101218",
+  "elements": [
+    {
+      "id": "background",
+      "type": "shape",
+      "track": 1,
+      "time": 0,
+      "width": "100%",
+      "height": "100%",
+      "fill_color": "#101218"
+    },
+    {
+      "id": "footage_0",
+      "type": "video",
+      "track": 2,
+      "time": 0,
+      "x": "30%",
+      "y": "45%",
+      "width": "55%",
+      "height": "70%",
+      "fit": "cover",
+      "border_radius": "16",
+      "volume": "0%",
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/video1.mp4"
+    },
+    {
+      "id": "product_card",
+      "type": "shape",
+      "track": 4,
+      "time": 0,
+      "x": "78%",
+      "y": "45%",
+      "width": "32%",
+      "height": "60%",
+      "fill_color": "#1A1D26",
+      "border_radius": "20"
+    },
+    {
+      "id": "product_title",
+      "type": "text",
+      "track": 4,
+      "time": 0,
+      "x": "78%",
+      "y": "30%",
+      "width": "28%",
+      "text": "",
+      "font_family": "Inter",
+      "font_weight": "700",
+      "font_size": "3.5 vmin",
+      "fill_color": "#FFFFFF"
+    },
+    {
+      "id": "product_price",
+      "type": "text",
+      "track": 4,
+      "time": 0,
+      "x": "78%",
+      "y": "55%",
+      "width": "28%",
+      "text": "",
+      "font_family": "Inter",
+      "font_weight": "600",
+      "font_size": "3 vmin",
+      "fill_color": "#E4A845"
+    },
+    {
+      "id": "voice",
+      "type": "audio",
+      "track": 5,
+      "time": 0,
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/music1.mp3"
+    },
+    {
+      "id": "subtitles",
+      "type": "text",
+      "track": 6,
+      "time": 0,
+      "x": "30%",
+      "y": "88%",
+      "width": "55%",
+      "x_alignment": "50%",
+      "y_alignment": "100%",
+      "text": "",
+      "font_family": "Inter",
+      "font_weight": "700",
+      "font_size": "3 vmin",
+      "fill_color": "#FFFFFF",
+      "stroke_color": "#000000",
+      "stroke_width": "0.3 vmin"
+    },
+    {
+      "id": "music",
+      "type": "audio",
+      "track": 7,
+      "time": 0,
+      "volume": "10%",
+      "audio_fade_in": 2,
+      "audio_fade_out": 3,
+      "source": "https://creatomate-static.s3.amazonaws.com/demo/music1.mp3"
+    }
+  ]
+}
